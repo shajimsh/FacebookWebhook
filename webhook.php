@@ -6,6 +6,9 @@ if ($verify_token=='abc123'){
 echo $challenge;
 }
 
+$input = json_decode(file_get_contents('php://input'), true);
+error_log(print_r($input, true));
+
 $obj=json_decode($_POST['details']);
 
 //create array of data to be posted
