@@ -27,9 +27,9 @@ $post_data['txtEmail'] = $obj->Email;
 $post_data['txtDialed_Tollfree'] = '800-207-2647';
 $post_data['txtUserID'] = 'kohler';
 $post_data['txtPassword'] = 'webleads1';
-error_log(print_r($obj, true));
-error_log(print_r($post_data['txtFirstName'], true));
-error_log(print_r($post_data, true));
+error_log('obj'+print_r($obj, true));
+error_log('first name'+print_r($post_data['txtFirstName'], true));
+error_log('post_data'+print_r($post_data, true));
 
 foreach ( $post_data as $key => $value) {
 
