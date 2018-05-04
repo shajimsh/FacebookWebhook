@@ -18,8 +18,8 @@ foreach ( $input['details'] as $key => $value) {
     }
 
 //create array of data to be posted
-error_log('Error_log:FirstName'.$post_data->FirstName = $obj->FirstName);
-error_log('Error_log:FirstName'.$post_data->LastName = $obj->LastName);
+error_log('Error_log:FirstName'.$post_data->FirstName);
+error_log('Error_log:FirstName'.$post_data->LastName);
 
 
 foreach ( $post_data as $key => $value) {
