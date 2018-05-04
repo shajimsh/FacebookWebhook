@@ -1,4 +1,6 @@
 <?php
+echo 'facebook start';
+ error_log('Error_log:facebook start');
 $challenge = $_REQUEST['hub_challenge'];
 $verify_token = $_REQUEST['hub_verify_token'];
 
@@ -8,7 +10,8 @@ echo $challenge;
 
 $input = json_decode(file_get_contents('php://input'), true);
 error_log(print_r($input, true));
-
+echo 'facebook end';
+ error_log('Error_log:facebook end');
 $obj=json_decode($_POST['details']);
 
 //create array of data to be posted
