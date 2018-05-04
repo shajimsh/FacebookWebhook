@@ -18,14 +18,14 @@ foreach ( $input['details'] as $key => $value) {
 $sendInput=json_encode($post_data, true);
 error_log('info_log:$sendInput'.$sendInput);
 error_log('info_log:$sendInput'.$sendInput['Phone']);
-
-$inputString=$sendInput['FirstName']."&".$sendInput['LastName']."&".$sendInput['Phone'];
-error_log('info_log:$$inputString'.$inputString);
+$postInput = json_decode($sendInput, true);
+$postInputValue=implode("&",$postInput);
+error_log('info_log:$$inputString'.$postInputValue);
 //create cURL connection
 $curl_connection =
   curl_init('https://kohler.leadperfection.com/batch/leadformgenerictest.asp?');
 //set data to be posted
-curl_setopt($curl_connection, CURLOPT_POSTFIELDS, $inputString);
+curl_setopt($curl_connection, CURLOPT_POSTFIELDS, $postInputValue);
 //perform our request
 $result = curl_exec($curl_connection);
 error_log('info_log:$result'.$result);
