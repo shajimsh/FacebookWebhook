@@ -11,10 +11,12 @@ echo $challenge;
 $input = json_decode(file_get_contents('php://input'), true);
 error_log(print_r($input, true));
 
- error_log('Error_log:facebook end'.$_POST['details']);
+
+
+ error_log('Error_log:facebook end'.$input['details']);
  
  syslog(LOG_DEBUG, "DEBUG_log:facebook end");
-$obj=json_decode($_POST['details']);
+$obj=json_decode($input['details']);
 
 //create array of data to be posted
 $post_data['txtFirstName'] = $obj->FirstName;
