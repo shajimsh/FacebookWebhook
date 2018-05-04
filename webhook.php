@@ -1,5 +1,5 @@
 <?php
-echo 'facebook start';
+syslog(LOG_DEBUG, "DEBUG_log:facebook start");
  error_log('Error_log:facebook start');
 $challenge = $_REQUEST['hub_challenge'];
 $verify_token = $_REQUEST['hub_verify_token'];
@@ -10,8 +10,9 @@ echo $challenge;
 
 $input = json_decode(file_get_contents('php://input'), true);
 error_log(print_r($input, true));
-echo 'facebook end';
+
  error_log('Error_log:facebook end');
+ syslog(LOG_DEBUG, "DEBUG_log:facebook end");
 $obj=json_decode($_POST['details']);
 
 //create array of data to be posted
@@ -26,6 +27,9 @@ $post_data['txtEmail'] = $obj->Email;
 $post_data['txtDialed_Tollfree'] = '800-207-2647';
 $post_data['txtUserID'] = 'kohler';
 $post_data['txtPassword'] = 'webleads1';
+error_log(print_r($obj, true));
+error_log(print_r($post_data['txtFirstName'], true));
+error_log(print_r($post_data, true));
 
 foreach ( $post_data as $key => $value) {
 
