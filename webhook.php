@@ -46,8 +46,8 @@ curl_setopt($curl_connection, CURLOPT_POSTFIELDS, $post_string);
 //perform our request
 $result = curl_exec($curl_connection);
 //show information regarding the request
-print_r(curl_getinfo($curl_connection));
-/*echo curl_errno($curl_connection) . '-' .
+/*print_r(curl_getinfo($curl_connection));
+echo curl_errno($curl_connection) . '-' .
                 curl_error($curl_connection);*/
 //close the connection
 curl_close($curl_connection);
