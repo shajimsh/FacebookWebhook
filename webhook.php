@@ -15,24 +15,27 @@ error_log(print_r($input, true));
 
  error_log('Error_log:facebook end'.$input['details']);
  
- $arrayString =implode ('&', $input['details']);
+ $arrayString =implode ('&', $input);
  
   error_log('Error_log:$array='.$arrayString);
- $obj=json_decode($arrayString,true);
+  $myJSON = json_encode($arrayString);
+  $obj1=json_decode($myJSON,true);
+ $obj2=json_decode($arrayString,true);
 
 //create array of data to be posted
-$post_data['txtFirstName'] = $obj->FirstName;
-$post_data['txtLastName'] = $obj->LastName;
-$post_data['txtAddress'] = $obj->Address;
-$post_data['txtCity'] = $obj->City;
-$post_data['txtState'] = $obj->State;
-$post_data['txtZip'] = $obj->Zip;
-$post_data['txtPhone'] = $obj->Phone;
-$post_data['txtEmail'] = $obj->Email;
+$post_data['txtFirstName'] = $obj1->FirstName;
+$post_data['txtLastName'] = $obj1->LastName;
+$post_data['txtAddress'] = $obj1->Address;
+$post_data['txtCity'] = $obj1->City;
+$post_data['txtState'] = $obj1->State;
+$post_data['txtZip'] = $obj1->Zip;
+$post_data['txtPhone'] = $obj1->Phone;
+$post_data['txtEmail'] = $obj1->Email;
 $post_data['txtDialed_Tollfree'] = '800-207-2647';
 $post_data['txtUserID'] = 'kohler';
 $post_data['txtPassword'] = 'webleads1';
-error_log('obj'.print_r($obj, true));
+error_log('obj1'.print_r($obj1, true));
+error_log('obj2'.print_r($obj2, true));
 error_log('first name'.print_r($post_data['txtFirstName'], true));
 error_log('post_data'.print_r($post_data, true));
 
