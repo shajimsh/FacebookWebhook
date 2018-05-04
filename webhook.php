@@ -18,7 +18,7 @@ error_log(print_r($input, true));
  $arrayString =implode ('&', $input);
  
   error_log('Error_log:$array='.$arrayString);
-  $obj1->FirstName
+  
   foreach ( $arrayString as $key => $value) {
 
     $arrayStrings[] = $key . '=' . $value;
