@@ -15,11 +15,9 @@ error_log(print_r($input, true));
 
  error_log('Error_log:facebook end'.$input['details']);
  
- $arrayString =implode ('&', $input);
  
-  error_log('Error_log:$array='.$arrayString);
   
-  foreach ( $arrayString as $key => $value) {
+  foreach ( $input['details'] as $key => $value) {
 
     $arrayStrings[] = $key . '=' . $value;
 
