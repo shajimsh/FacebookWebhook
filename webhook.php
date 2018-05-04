@@ -20,9 +20,10 @@ error_log(print_r($input, true));
   foreach ( $input['details'] as $key => $value) {
 
     $arrayStrings[] = $key . '=' . $value;
+	error_log('Error_log:$arrayStrings[]'.$arrayStrings[]);
 
 }
-  error_log('Error_log:$arrayStrings[txtFirstName]'.$arrayStrings[txtFirstName]);
+  
 //create array of data to be posted
 $post_data['txtFirstName'] = $obj1->FirstName;
 $post_data['txtLastName'] = $obj1->LastName;
