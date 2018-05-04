@@ -10,20 +10,17 @@ echo $challenge;
 
 $input = json_decode(file_get_contents('php://input'), true);
   
-$obj=json_decode($input,true); // put the second parameter as true if you want it to be a associative array
+//$obj=json_decode($input,true); // put the second parameter as true if you want it to be a associative array
+
+$post_data=null;
+foreach ( $input['details'] as $key => $value) {
+       $post_data->$key = $value;
+    }
 
 //create array of data to be posted
-$post_data['FirstName'] = $obj->FirstName;
-$post_data['LastName'] = $obj->LastName;
-$post_data['Address'] = $obj->Address;
-$post_data['City'] = $obj->City;
-$post_data['State'] = $obj->State;
-$post_data['Zip'] = $obj->Zip;
-$post_data['Phone'] = $obj->Phone;
-$post_data['Email'] = $obj->Email;
-$post_data['Dialed_Tollfree'] = '800-207-2647';
-$post_data['UserID'] = 'kohler';
-$post_data['Password'] = 'webleads1';
+echo $post_data->FirstName = $obj->FirstName;
+echo $post_data->LastName = $obj->LastName;
+
 
 foreach ( $post_data as $key => $value) {
 
