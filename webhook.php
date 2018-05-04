@@ -12,14 +12,14 @@ $input = json_decode(file_get_contents('php://input'), true);
 // setting the value of details in post_data
 $post_data=null;
 foreach ( $input['details'] as $key => $value) {
-       $post_data->$key = $value;
+       $post_data->$key = $key."=".$value;
     }
 // encode post_data into json
 $sendInput=json_encode($post_data, true);
-error_log('info_log:$post_data'.$post_data);
 error_log('info_log:$sendInput'.$sendInput);
-error_log('info_log:$inputString'.$inputString);
 
+$inputString=$sendInput['FirstName']."&".$sendInput['LastName']."&".$sendInput['Phone'];
+error_log('info_log:$$inputString'.$inputString);
 //create cURL connection
 $curl_connection =
   curl_init('https://kohler.leadperfection.com/batch/leadformgenerictest.asp?');
