@@ -18,10 +18,13 @@ error_log(print_r($input, true));
  $arrayString =implode ('&', $input);
  
   error_log('Error_log:$array='.$arrayString);
-  $myJSON = json_encode($arrayString);
-  $obj1=json_decode($myJSON,true);
- $obj2=json_decode($arrayString,true);
+  $obj1->FirstName
+  foreach ( $arrayString as $key => $value) {
 
+    $arrayStrings[] = $key . '=' . $value;
+
+}
+  error_log('Error_log:$arrayStrings[txtFirstName]'.$arrayStrings[txtFirstName]);
 //create array of data to be posted
 $post_data['txtFirstName'] = $obj1->FirstName;
 $post_data['txtLastName'] = $obj1->LastName;
