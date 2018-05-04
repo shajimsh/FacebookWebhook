@@ -11,7 +11,8 @@ echo $challenge;
 $input = json_decode(file_get_contents('php://input'), true);
 error_log(print_r($input, true));
 
- error_log('Error_log:facebook end');
+ error_log('Error_log:facebook end'.$_POST['details']);
+ 
  syslog(LOG_DEBUG, "DEBUG_log:facebook end");
 $obj=json_decode($_POST['details']);
 
