@@ -9,6 +9,7 @@ echo $challenge;
 }
 
 $input = json_decode(file_get_contents('php://input'), true);
+error_log('info_log:$postInputValue'.$input);
 // setting the value of details in post_data
 $post_data=null;
 foreach ( $input['details'] as $key => $value) {
