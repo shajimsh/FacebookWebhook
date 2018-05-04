@@ -1,6 +1,6 @@
 <?php
-syslog(LOG_DEBUG, "DEBUG_log:facebook start");
- error_log('Error_log:facebook start');
+header('Content-Type: application/json');
+
 $challenge = $_REQUEST['hub_challenge'];
 $verify_token = $_REQUEST['hub_verify_token'];
 
@@ -16,22 +16,11 @@ foreach ( $input['details'] as $key => $value) {
     }
 // encode post_data into json
 $sendInput=json_encode($post_data, true);
-error_log('Error_log:$sendInput'.$sendInput);
-
-//create the final string to be posted using implode()
-
-$post_string = implode ('&', $post_items);
+error_log('info_log:$sendInput'.$sendInput);
 
 //create cURL connection
 $curl_connection =
   curl_init('https://kohler.leadperfection.com/batch/leadformgenerictest.asp');
-//set options
-curl_setopt($curl_connection, CURLOPT_CONNECTTIMEOUT, 30);
-curl_setopt($curl_connection, CURLOPT_USERAGENT,
-  "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)");
-curl_setopt($curl_connection, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($curl_connection, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($curl_connection, CURLOPT_FOLLOWLOCATION, 1);
 //set data to be posted
 curl_setopt($curl_connection, CURLOPT_POSTFIELDS, $sendInput);
 //perform our request
@@ -42,10 +31,5 @@ echo curl_errno($curl_connection) . '-' .
                 curl_error($curl_connection);
 //close the connection
 curl_close($curl_connection);
-
-
-  
-
-
 
 ?>
