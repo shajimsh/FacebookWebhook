@@ -9,24 +9,14 @@ echo $challenge;
 }
 
 $input = json_decode(file_get_contents('php://input'), true);
-  
-//$obj=json_decode($input,true); // put the second parameter as true if you want it to be a associative array
-
+// setting the value of details in post_data
 $post_data=null;
 foreach ( $input['details'] as $key => $value) {
        $post_data->$key = $value;
     }
-
-//create array of data to be posted
-error_log('Error_log:FirstName'.$post_data->FirstName);
-error_log('Error_log:FirstName'.$post_data->LastName);
-
-
-foreach ( $post_data as $key => $value) {
-
-    $post_items[] = $key . '=' . $value;
-
-}
+// encode post_data into json
+$sendInput=json_encode($post_data, true);
+error_log('Error_log:$sendInput'.$sendInput);
 
 //create the final string to be posted using implode()
 
@@ -43,7 +33,7 @@ curl_setopt($curl_connection, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curl_connection, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($curl_connection, CURLOPT_FOLLOWLOCATION, 1);
 //set data to be posted
-curl_setopt($curl_connection, CURLOPT_POSTFIELDS, $post_string);
+curl_setopt($curl_connection, CURLOPT_POSTFIELDS, $sendInput);
 //perform our request
 $result = curl_exec($curl_connection);
 //show information regarding the request
