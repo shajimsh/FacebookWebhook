@@ -22,9 +22,9 @@ $postInput = json_decode($sendInput, true);
 $postInputValue=implode("&",$postInput);
 error_log('info_log:$$inputString'.$postInputValue);
 //create cURL connection
-$curl_connection =
-  curl_init('https://kohler.leadperfection.com/batch/leadformgenerictest.asp?');
+$curl_connection = curl_init('https://kohler.leadperfection.com/batch/leadformgenerictest.asp');
 //set data to be posted
+curl_setopt( $curl_connection, CURLOPT_POST, 1);
 curl_setopt($curl_connection, CURLOPT_POSTFIELDS, $postInputValue);
 //perform our request
 $result = curl_exec($curl_connection);
