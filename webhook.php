@@ -16,7 +16,7 @@ foreach ( $input['details'] as $key => $value) {
     }
 // encode post_data into json
 $sendInput=json_encode($post_data, true);
-$inputString=implode('&',$sendInput);
+error_log('info_log:$post_data'.$post_data);
 error_log('info_log:$sendInput'.$sendInput);
 error_log('info_log:$inputString'.$inputString);
 
