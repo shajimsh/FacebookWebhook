@@ -10,20 +10,20 @@ echo $challenge;
 
 $input = json_decode(file_get_contents('php://input'), true);
   
-$obj=json_decode($input); // put the second parameter as true if you want it to be a associative array
+$obj=json_decode($input,true); // put the second parameter as true if you want it to be a associative array
 
 //create array of data to be posted
-$post_data['txtFirstName'] = $obj->FirstName;
-$post_data['txtLastName'] = $obj->LastName;
-$post_data['txtAddress'] = $obj->Address;
-$post_data['txtCity'] = $obj->City;
-$post_data['txtState'] = $obj->State;
-$post_data['txtZip'] = $obj->Zip;
-$post_data['txtPhone'] = $obj->Phone;
-$post_data['txtEmail'] = $obj->Email;
-$post_data['txtDialed_Tollfree'] = '800-207-2647';
-$post_data['txtUserID'] = 'kohler';
-$post_data['txtPassword'] = 'webleads1';
+$post_data['FirstName'] = $obj->FirstName;
+$post_data['LastName'] = $obj->LastName;
+$post_data['Address'] = $obj->Address;
+$post_data['City'] = $obj->City;
+$post_data['State'] = $obj->State;
+$post_data['Zip'] = $obj->Zip;
+$post_data['Phone'] = $obj->Phone;
+$post_data['Email'] = $obj->Email;
+$post_data['Dialed_Tollfree'] = '800-207-2647';
+$post_data['UserID'] = 'kohler';
+$post_data['Password'] = 'webleads1';
 
 foreach ( $post_data as $key => $value) {
 
