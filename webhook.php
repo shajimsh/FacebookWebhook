@@ -14,9 +14,9 @@ error_log(print_r($input, true));
 
 
  error_log('Error_log:facebook end'.$input['details']);
- 
- syslog(LOG_DEBUG, "DEBUG_log:facebook end");
-$obj=json_decode($input['details']);
+ $array=JSON.stringify($input['details']);
+ error_log('Error_log:$array='.$array);
+ $obj=json_decode($array);
 
 //create array of data to be posted
 $post_data['txtFirstName'] = $obj->FirstName;
