@@ -10,7 +10,7 @@ echo $challenge;
 
 $input = json_decode(file_get_contents('php://input'), true);
   
-$obj=json_decode($input['details']); // put the second parameter as true if you want it to be a associative array
+$obj=json_decode($input); // put the second parameter as true if you want it to be a associative array
 
 //create array of data to be posted
 $post_data['txtFirstName'] = $obj->FirstName;
