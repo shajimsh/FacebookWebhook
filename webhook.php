@@ -20,7 +20,7 @@ error_log(print_r($input, true));
   foreach ( $input['details'] as $key => $value) {
 
     $arrayStrings[] = $key . '=' . $value;
-	error_log('Error_log:$arrayStrings[]'.$arrayStrings[$key]);
+	error_log('Error_log:$arrayStrings[]'.$arrayStrings[]);
 
 }
   
