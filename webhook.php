@@ -14,8 +14,8 @@ error_log(print_r($input, true));
 $post_data=null;
 $fname=$input['entry'][0]['changes'][0]['field'];
 $lname=$input['entry'][0]['changes'][0]['value']['leadgen_id'];
-error_log('info_log:$fname'.$fname.'   info_log:$lname'.$lname);
-foreach ( $input['details'] as $key => $value) {
+error_log('info_log:$fname '.$fname.'info_log:$lname '.$lname);
+foreach ( $input['entry'][0]['changes'][0]['details'] as $key => $value) {
        $post_data->$key = $key."=".$value;
     }
 // encode post_data into json
