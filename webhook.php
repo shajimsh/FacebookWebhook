@@ -12,7 +12,7 @@ $input = json_decode(file_get_contents('php://input'), true);
 error_log(print_r($input, true));
 // setting the value of details in post_data
 $post_data=null;
-$fname=$input['field'];
+$fname=$input['entry'][0]['changes'][0]['field'];
 $lname=$input['value']['leadgen_id'];
 error_log('info_log:$fname'.$fname.'   info_log:$lname'.$lname);
 foreach ( $input['details'] as $key => $value) {
