@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 $challenge = $_REQUEST['hub_challenge'];
 $verify_token = $_REQUEST['hub_verify_token'];
 
-if ($verify_token=='abc123'){
+if ($verify_token=='Kohler123'){
 echo $challenge;
 }
 
@@ -12,6 +12,9 @@ $input = json_decode(file_get_contents('php://input'), true);
 error_log(print_r($input, true));
 // setting the value of details in post_data
 $post_data=null;
+$fname=$input['field'];
+$lname=$input['value']->['leadgen_id'];
+error_log('info_log:$fname'.$fname.'   info_log:$lname'.$lname);
 foreach ( $input['details'] as $key => $value) {
        $post_data->$key = $key."=".$value;
     }
