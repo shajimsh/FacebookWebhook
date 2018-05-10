@@ -1,7 +1,6 @@
 <?php
-
-echo "<div><p>This is Kohler application for integrating Facebook lead ads via a webhook with KOHLER LPL appication.</p> ";
-echo "<p>Application is hosted on Azure app server   Kohler Subscription is Corporate Communications - 1</p> <br /> ";
+echo "<div><p>This is Kohler application for integrating Facebook lead ads via a webhook with KOHLER LPL appication.</p>";
+echo "<p>Application is hosted on Azure app server Kohler Subscription is Corporate Communications - 1</p>";
 echo "<p> LPL application : <a href='https://kohler.leadperfection.com/batch/leadformgeneric.asp'>
 https://kohler.leadperfection.com/batch/leadformgeneric.asp</a></p> ";
 echo "<p>Facebook page is Kohler Company </p>" ;

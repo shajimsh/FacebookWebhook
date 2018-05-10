@@ -25,6 +25,7 @@
       {access_token: page_access_token},
       function(response) {
       console.log('Successfully subscribed page', response);
+	  console.log('Successfully subscribed page', page_access_token);
     });
   }
     
@@ -45,6 +46,7 @@
           a.innerHTML = page.name;
           li.appendChild(a);
           ul.appendChild(li);
+		  
         }
       });
     }, {scope: 'manage_pages'});
